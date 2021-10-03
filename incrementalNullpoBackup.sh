@@ -12,7 +12,6 @@ if [ ! -d "${SRCDIR}" ]; then
 fi
 
 # rsyncのlink-destオプションで参照する、1世代前のディレクトリ名を取得
-LINKDEST=$(ls -1l ${DESTDIR} | awk '{print $7}' | tr -d '/' | sort -n | tail -1)
 TODAY=$(date +%Y%m%d_%H%M%S)
 
 # ロックファイルである"sentinel"が存在するなら、前回のバックアップが
