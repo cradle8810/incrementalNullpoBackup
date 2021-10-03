@@ -22,8 +22,8 @@ if [ ! -d ${NULLPODIR} ]; then
     exit 1
 fi
 
-LINKDEST=`ls -1l ${DESTDIR} | awk '{print $7}' | tr -d '/' | sort -n | tail -1`
-TODAY=`date +%Y%m%d_%H%M%S`
+LINKDEST=$(ls -1l ${DESTDIR} | awk '{print $7}' | tr -d '/' | sort -n | tail -1)
+TODAY=$(date +%Y%m%d_%H%M%S)
 
 if [ -e ${DESTDIR}/sentinel ]; then
     echo "[ERROR] Previous operation is abnormaly finished." >&2
@@ -35,6 +35,6 @@ fi
 touch ${DESTDIR}/sentinel
 
 echo "rsync -av8  --link-dest=../${LINKDEST}/ ${NULLPODIR} ${DESTDIR}/${TODAY}"
-rsync -av8 --link-dest=../${LINKDEST}/ ${NULLPODIR} ${DESTDIR}/${TODAY}
+rsync -av8 --link-dest="../${LINKDEST}/" "${NULLPODIR}" "${DESTDIR}/${TODAY}"
 
 rm ${DESTDIR}/sentinel
