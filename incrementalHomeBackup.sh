@@ -1,7 +1,7 @@
 #!/bin/sh
 
-SRCDIR='/skylark/Nullpo/'
-DESTDIR='/backup/Nullpo'
+SRCDIR='/skylark/hayato/'
+DESTDIR='/backup/hayato'
 # SRCDIRはスラッシュで終了させること
 
 # SRCDIRが存在しないなら、エラーで終了
